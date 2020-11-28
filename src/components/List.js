@@ -8,13 +8,13 @@ const List = (props) => {
     return (
         <div className='list'>
             <h2 className='list-head'>The full list</h2>
-            <ul className='list-inner'>
+            <ol className='list-inner'>
                 {list.map((pie) => {
                     return (
                         <Pie key={pie.Tweet} pie={pie}/>
                     );
                 })}
-            </ul>
+            </ol>
         </div>
     );
 };

@@ -28,7 +28,6 @@ const Shop = (props) => {
     const logo = logoFile(shop);
 
     return (
-        // TODO: shop logos
         <img className='pie__shop' src={logo} alt={shop}/>
     )
 };

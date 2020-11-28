@@ -94,3 +94,7 @@ function App() {
 }
 
 export default App;
+
+// TODO: h1 as block on small screens
+// TODO: nginx for index
+// TODO: CORS on ipad?

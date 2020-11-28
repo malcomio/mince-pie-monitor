@@ -9,14 +9,21 @@ html {
   text-align: center;
 }
 
+ul {
+  padding: 0;
+}
+
 h1 {
+  display: flex;
+  align-items: center;
   color: white;
+  font-size: 3rem;
 }
 
 h1:before,
 h1:after {
-  width: 4rem;
-  height: 4rem;
+  width: 8rem;
+  height: 10rem;
   content: '';
   display: inline-block;
   background-size: contain;
@@ -25,18 +32,14 @@ h1:after {
   margin-bottom: -1rem;
 }
 
-h1 {
-  font-size: 3rem;
-}
-
 h1:before {
   background-image: url("./img/holly.svg");
-  margin-right: 2rem;
+  margin-right: .25rem;
 }
 
 h1:after {
   background-image: url("./img/tree.svg");
-  margin-left: 2rem;
+  margin-left: .25rem;
 }
 
 h2 {
@@ -191,7 +194,21 @@ details > summary {
 }
 
 
-@media screen and (min-width: 30rem) {
+@media screen and (min-width: 50rem) {
+  h1:before,
+  h1:after {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  h1:before {
+    margin-right: 2rem;
+  }
+
+  h1:after {
+    margin-left: 2rem;
+  }
+
   .container-one {
     display: flex;
     justify-content: space-between;

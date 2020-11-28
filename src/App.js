@@ -77,7 +77,7 @@ function App() {
 
     return (
         <div className='App'>
-            <h1>Mairead's Mince Pie Monitor</h1>
+            <h1>Mairéad's Mince Pie Monitor</h1>
             <div className='container-one'>
                 <Winners isLoading={appState.loading} list={appState.list}/>
                 <Loser isLoading={appState.loading} list={appState.list}/>
@@ -95,6 +95,4 @@ function App() {
 
 export default App;
 
-// TODO: h1 as block on small screens
 // TODO: nginx for index
-// TODO: CORS on ipad?

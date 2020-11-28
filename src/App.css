@@ -1,38 +1,232 @@
+html {
+  background: red;
+}
+
 .App {
+  margin: 1rem auto;
+  width: 90%;
+  max-width: 60rem;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+h1 {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+h1:before,
+h1:after {
+  width: 4rem;
+  height: 4rem;
+  content: '';
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin-bottom: -1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+h1 {
+  font-size: 3rem;
+}
+
+h1:before {
+  background-image: url("./img/holly.svg");
+  margin-right: 2rem;
+}
+
+h1:after {
+  background-image: url("./img/tree.svg");
+  margin-left: 2rem;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.winners,
+.loser,
+.list,
+.credits {
+  background: white;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  border: 1px solid black;
+  box-shadow: 3px 10px 1rem rgba(0, 0, 0, .6);
+}
+
+.winners {
+
+}
+
+.podium,
+.wooden-spoon {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.pie {
+
+}
+
+.pie p {
+  border: 0;
+}
+
+.pie__shop {
+  width: 4rem;
+}
+
+.pie__image {
+  width: 50px;
+}
+
+.score__tree {
+  width: .75rem;
+}
+
+.score__tree__half {
+  height: .5rem;
+  object-fit: cover;
+  object-position: bottom;
+}
+
+.winners .pie__wrapper {
+  text-decoration: none;
+}
+
+.winners .pie__wrapper:after {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.winners .pie__wrapper:first-child {
+  order: 2;
+}
+
+.winners .pie__wrapper:first-child:after {
+  background: gold;
+  content: '1';
+  height: 10rem;
+}
+
+.winners .pie__wrapper:nth-child(2) {
+  order: 1;
+}
+
+.winners .pie__wrapper:nth-child(2):after {
+  background: silver;
+  content: '2';
+  height: 5rem;
+}
+
+.winners .pie__wrapper:nth-child(3) {
+  order: 3;
+}
+
+.winners .pie__wrapper:nth-child(3):after {
+  background: brown;
+  content: '3';
+  height: 3rem;
+}
+
+.winners p {
+  margin: .25rem 0;
+}
+
+/**
+ * Full results list.
+ */
+.list {
+
+}
+
+.list-inner {
+  margin: 0 auto;
+  padding: 0;
+}
+
+.list .pie__wrapper {
+  display: block;
+  width: 100%;
+}
+
+.list .pie {
+  width: auto;
+  display: grid;
+  grid-template-columns: minmax(4rem, 1fr) minmax(6rem, 1fr) minmax(2.5rem, 1fr) minmax(3rem, 1fr);
+  grid-gap: .25rem;
+  align-items: center;
+  text-align: left;
+  border: 0;
+}
+
+.list .pie p,
+.list .pie__image {
+  display: inline-block;
+}
+
+.list .pie__name {
+  min-width: 5rem;
+  padding: .2rem;
+}
+
+.list .pie__image {
+
+}
+
+.credits h2 {
+  display: inline-block;
+  margin: 0;
+}
+
+details > summary {
+  cursor: pointer;
+}
+
+
+@media screen and (min-width: 30rem) {
+  .container-one {
+    display: flex;
   }
-  to {
-    transform: rotate(360deg);
+
+  .container-two {
+
+  }
+
+  .winners {
+    width: 65%;
+    float: left;
+  }
+
+  .winners .pie {
+    width: 10rem;
+  }
+
+  .winners .pie__wrapper:after {
+    width: 10rem;
+  }
+
+  .loser {
+    width: 30%;
+    float: left;
+  }
+
+  .list {
+
+  }
+
+  .list-inner {
+    width: 30rem;
+  }
+
+  .score__tree {
+    width: 1.5rem;
   }
 }

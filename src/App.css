@@ -63,19 +63,11 @@ li {
   box-shadow: 3px 10px 1rem rgba(0, 0, 0, .6);
 }
 
-.winners {
-
-}
-
 .podium,
 .wooden-spoon {
   display: flex;
   align-items: flex-end;
   justify-content: center;
-}
-
-.pie {
-
 }
 
 .pie p {
@@ -95,7 +87,7 @@ li {
 }
 
 .score__tree__half {
-  height: .5rem;
+  height: .75rem;
   object-fit: cover;
   object-position: bottom;
 }

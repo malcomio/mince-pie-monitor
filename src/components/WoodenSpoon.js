@@ -11,7 +11,7 @@ const Podium = (props) => {
             <ul className='wooden-spoon'>
                 {list.slice(list.length - 1).map((pie) => {
                     return (
-                        <Pie pie={pie}/>
+                        <Pie key={pie.Tweet} pie={pie}/>
                     );
                 })}
             </ul>

@@ -5,10 +5,8 @@ import Shop from "./Shop";
 const Pie = (props) => {
     const {pie} = props;
     return (
-        // TODO: shop logos
-        <a href={pie.Tweet}
-           className='pie__wrapper' target='_blank' rel='noopener noreferrer'>
-            <li key={pie.Tweet} className='pie'>
+        <a href={pie.Tweet} className='pie__wrapper' target='_blank' rel='noopener noreferrer'>
+            <li className='pie'>
                 <Shop shop={pie.Shop}/>
                 <p className='pie__name'>{pie.Name} </p>
                 <img className='pie__image' src={pie.Image} alt={'Photo of ' + pie.Name}/>

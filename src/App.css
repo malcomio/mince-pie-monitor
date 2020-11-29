@@ -26,6 +26,7 @@ h1:after {
   width: 8rem;
   height: 10rem;
   content: '';
+  background-image: url("./img/holly.svg");
   display: inline-block;
   background-size: contain;
   background-repeat: no-repeat;
@@ -34,12 +35,11 @@ h1:after {
 }
 
 h1:before {
-  background-image: url("./img/holly.svg");
   margin-right: .25rem;
+  transform: scaleX(-1);
 }
 
 h1:after {
-  background-image: url("./img/tree.svg");
   margin-left: .25rem;
 }
 

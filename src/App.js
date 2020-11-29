@@ -94,5 +94,3 @@ function App() {
 }
 
 export default App;
-
-// TODO: nginx for index

@@ -5,6 +5,7 @@ import Podium from './components/Podium';
 import WoodenSpoon from "./components/WoodenSpoon";
 import Credits from "./components/Credits";
 import List from "./components/List";
+import About from "./components/About";
 
 const getColumnTitle = (colNum) => {
     const columns = [
@@ -78,14 +79,15 @@ function App() {
     return (
         <div className='App'>
             <h1>Mairéad's Mince Pie Monitor</h1>
-            <div className='container-one'>
+            <div className='container'>
                 <Winners isLoading={appState.loading} list={appState.list}/>
-                <Loser isLoading={appState.loading} list={appState.list}/>
             </div>
-            <div className='container container-two'>
+            <div className='container'>
 
                 <FullList isLoading={appState.loading} list={appState.list}/>
+                <Loser isLoading={appState.loading} list={appState.list}/>
             </div>
+            <About />
             <footer>
                 <Credits />
             </footer>

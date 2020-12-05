@@ -16,7 +16,7 @@ const Podium = (props) => {
 
     return (
         <div className='winners box'>
-            <h2 className='list-head'>The Best</h2>
+            <h2 className='list-head'>🏅 The Best 🏆</h2>
             <ul className='podium'>
                 {pies.map((pie) => {
                     return (

@@ -110,7 +110,7 @@ li {
 }
 
 .score__tree__half {
-    height: .75rem;
+    height: .375rem;
     object-fit: cover;
     object-position: bottom;
 }
@@ -236,6 +236,10 @@ details > summary {
 
     .score__tree {
         width: 1.5rem;
+    }
+
+    .score__tree__half {
+        height: .375rem;
     }
 }
 

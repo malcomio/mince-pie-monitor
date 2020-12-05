@@ -115,10 +115,6 @@ li {
     object-position: bottom;
 }
 
-.podium {
-    padding: 0 2rem;
-}
-
 .winners p {
     margin: .25rem 0;
 }
@@ -210,6 +206,10 @@ details > summary {
 
     .wooden-spoon .pie__wrapper {
       grid-column-start: 2;
+    }
+
+    .podium {
+        padding: 0 2rem;
     }
 
     /* Dealing with 2 orphan items */

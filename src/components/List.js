@@ -6,7 +6,7 @@ const List = (props) => {
     if (!list || list.length === 0) return <p>No pies, sorry</p>;
 
     return (
-        <div className='list'>
+        <div className='list box'>
             <h2 className='list-head'>The full list</h2>
             <ol className='list-inner'>
                 {list.map((pie) => {

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Credits = () => {
     return (
-        <details className='credits'>
+        <details className='credits box'>
             <summary>
                 <h2 className='list-head'>Credits</h2>
             </summary>

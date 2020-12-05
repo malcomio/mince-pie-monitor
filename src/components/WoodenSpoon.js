@@ -6,7 +6,7 @@ const Podium = (props) => {
     if (!list || list.length === 0) return <p>No repos, sorry</p>;
 
     return (
-        <div className='loser'>
+        <div className='loser box'>
             <h2 className='list-head'>The Worst</h2>
             <ul className='wooden-spoon'>
                 {list.slice(list.length - 1).map((pie) => {

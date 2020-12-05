@@ -9,7 +9,7 @@ const Podium = (props) => {
     let pies = [];
     const topScore = list[0].Score;
     for (const thisPie in list) {
-        if (list[thisPie].Score = topScore) {
+        if (list[thisPie].Score === topScore) {
             pies.push(list[thisPie])
         }
     }

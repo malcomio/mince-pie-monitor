@@ -96,3 +96,9 @@ function App() {
 }
 
 export default App;
+
+// TODO: twitter card
+// TODO: facebook tags
+// TODO: best show flex?
+// TODO: link style
+// TODO: half pies

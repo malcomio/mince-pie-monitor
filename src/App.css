@@ -51,10 +51,7 @@ li {
   list-style: none;
 }
 
-.winners,
-.loser,
-.list,
-.credits {
+.box {
   background: white;
   margin-bottom: 2rem;
   padding: 1rem;
@@ -65,9 +62,35 @@ li {
 
 .podium,
 .wooden-spoon {
-  display: flex;
-  align-items: flex-end;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1rem;
+  align-items: stretch;
+  justify-content: space-between;
+}
+
+.wooden-spoon {
   justify-content: center;
+}
+
+.wooden-spoon .pie__wrapper {
+  grid-area: 1 / 2;
+}
+
+.pie__wrapper {
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: stretch;
+  padding: .25rem;
+}
+
+.pie {
+  display: grid;
+  min-width: 15rem;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: .5rem;
+  justify-items: center;
+  align-items: center;
 }
 
 .pie p {
@@ -92,44 +115,8 @@ li {
   object-position: bottom;
 }
 
-.winners .pie__wrapper {
-  text-decoration: none;
-}
-
-.winners .pie__wrapper:after {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.winners .pie__wrapper:first-child {
-  order: 2;
-}
-
-.winners .pie__wrapper:first-child:after {
-  background: gold;
-  content: '1';
-  height: 10rem;
-}
-
-.winners .pie__wrapper:nth-child(2) {
-  order: 1;
-}
-
-.winners .pie__wrapper:nth-child(2):after {
-  background: silver;
-  content: '2';
-  height: 5rem;
-}
-
-.winners .pie__wrapper:nth-child(3) {
-  order: 3;
-}
-
-.winners .pie__wrapper:nth-child(3):after {
-  background: brown;
-  content: '3';
-  height: 3rem;
+.podium {
+  padding: 0 2rem;
 }
 
 .winners p {
@@ -151,6 +138,7 @@ li {
 .list .pie__wrapper {
   display: block;
   width: 100%;
+  border: 0;
 }
 
 .list .pie {
@@ -200,33 +188,6 @@ details > summary {
 
   h1:after {
     margin-left: 2rem;
-  }
-
-  .container-one {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .container-two {
-
-  }
-
-  .winners {
-    width: 60%;
-    float: left;
-  }
-
-  .winners .pie {
-    width: 10rem;
-  }
-
-  .winners .pie__wrapper:after {
-    width: 10rem;
-  }
-
-  .loser {
-    width: 30%;
-    float: left;
   }
 
   .list {

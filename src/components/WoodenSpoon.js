@@ -7,7 +7,7 @@ const Podium = (props) => {
 
     return (
         <div className='loser'>
-            <h2 className='list-head'>The Loser</h2>
+            <h2 className='list-head'>The Worst</h2>
             <ul className='wooden-spoon'>
                 {list.slice(list.length - 1).map((pie) => {
                     return (

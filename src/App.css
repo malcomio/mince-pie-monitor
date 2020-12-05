@@ -83,7 +83,7 @@ li {
 .pie {
   display: grid;
   min-width: 15rem;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
   grid-gap: .5rem;
   justify-items: center;
   align-items: center;
@@ -176,6 +176,13 @@ details > summary {
   }
 }
 
+@media screen and (min-width: 30rem) and (max-width: 50rem) {
+  .podium {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
 @media screen and (min-width: 50rem) {
   h1:before,
   h1:after {
@@ -193,11 +200,14 @@ details > summary {
 
   .podium,
   .wooden-spoon {
-    grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 
+  .podium .pie__wrapper,
   .wooden-spoon .pie__wrapper {
-    grid-area: 1 / 2;
+    max-width: 30%;
   }
 
   .list {

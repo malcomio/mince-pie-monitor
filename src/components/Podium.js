@@ -5,11 +5,12 @@ const Podium = (props) => {
     let {list} = props;
     if (!list || list.length === 0) return <p>No pies, sorry</p>;
 
-    // Delete all pies not matching the top score.
+    // Get all pies matching the top score.
+    let pies = [];
     const topScore = list[0].Score;
     for (const thisPie in list) {
-        if (list[thisPie].Score < topScore) {
-            delete list[thisPie];
+        if (list[thisPie].Score = topScore) {
+            pies.push(list[thisPie])
         }
     }
 
@@ -17,7 +18,7 @@ const Podium = (props) => {
         <div className='winners box'>
             <h2 className='list-head'>The Best</h2>
             <ul className='podium'>
-                {list.map((pie) => {
+                {pies.map((pie) => {
                     return (
                         <Pie key={pie.Tweet} pie={pie} />
                     );

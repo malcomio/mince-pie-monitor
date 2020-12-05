@@ -63,7 +63,7 @@ li {
 .podium,
 .wooden-spoon {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-gap: 1rem;
   align-items: stretch;
   justify-content: space-between;
@@ -71,10 +71,6 @@ li {
 
 .wooden-spoon {
   justify-content: center;
-}
-
-.wooden-spoon .pie__wrapper {
-  grid-area: 1 / 2;
 }
 
 .pie__wrapper {
@@ -174,6 +170,11 @@ details > summary {
   cursor: pointer;
 }
 
+@media screen and (max-width: 50rem) {
+  .pie {
+    width: 100%;
+  }
+}
 
 @media screen and (min-width: 50rem) {
   h1:before,
@@ -190,6 +191,15 @@ details > summary {
     margin-left: 2rem;
   }
 
+  .podium,
+  .wooden-spoon {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .wooden-spoon .pie__wrapper {
+    grid-area: 1 / 2;
+  }
+
   .list {
 
   }
@@ -202,3 +212,4 @@ details > summary {
     width: 1.5rem;
   }
 }
+

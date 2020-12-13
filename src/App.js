@@ -1,11 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import './App.css';
 import withListLoading from './components/withListLoading';
-import Podium from './components/Podium';
-import WoodenSpoon from "./components/WoodenSpoon";
 import Credits from "./components/Credits";
-import List from "./components/List";
+
 import About from "./components/About";
+import Wrapper from "./components/Wrapper";
 
 const getColumnTitle = (colNum) => {
     const columns = [
@@ -53,9 +52,7 @@ const parsePieData = (data) => {
 };
 
 function App() {
-    const Winners = withListLoading(Podium);
-    const Loser = withListLoading(WoodenSpoon);
-    const FullList = withListLoading(List);
+    const Wrap = withListLoading(Wrapper);
 
     const [appState, setAppState] = useState({
         loading: false,
@@ -79,14 +76,7 @@ function App() {
     return (
         <div className='App'>
             <h1>Mairéad's Mince Pie Monitor</h1>
-            <div className='container'>
-                <Winners isLoading={appState.loading} list={appState.list}/>
-            </div>
-            <div className='container'>
-
-                <FullList isLoading={appState.loading} list={appState.list}/>
-                <Loser isLoading={appState.loading} list={appState.list}/>
-            </div>
+            <Wrap isLoading={appState.loading} list={appState.list}/>
             <About />
             <footer>
                 <Credits />

@@ -161,6 +161,7 @@ li {
 }
 
 .list .pie__name {
+    justify-self: start;
     min-width: 5rem;
     padding: .2rem;
 }

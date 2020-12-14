@@ -41,6 +41,7 @@ class List extends React.Component {
         return (
             <div className='list box'>
                 <h2 className='list-head'>The full list</h2>
+                <label htmlFor='shop'>Only show pies from:</label><br/>
                 <select name='shop' onChange={this.filterList}>
                     <option value='%'>Select a shop</option>
                     {shops.map((shop) => {

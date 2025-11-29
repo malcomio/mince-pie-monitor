@@ -1,6 +1,7 @@
-import Link from "next/link";
+import type { Metadata, ResolvingMetadata } from 'next'
 
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
+import { documentToPlainTextString } from '@contentful/rich-text-plain-text-renderer';
 
 import {getAllPies, getPie} from "@/lib/api";
 import {Score} from "@/lib/components/score";
@@ -14,6 +15,40 @@ export async function generateStaticParams() {
     return allPosts.map((post) => ({
         slug: post.slug,
     }));
+}
+
+type Props = {
+    params: Promise<{ slug: string }>
+    searchParams: Promise<{ [key: string]: string | string[] | undefined }>
+}
+
+export async function generateMetadata(
+    { params, searchParams }: Props,
+    parent: ResolvingMetadata
+): Promise<Metadata> {
+    const slug = (await params).slug
+    const pie = await getPie(slug);
+    
+    const pageTitle = `${pie.title} | Mairead's Mince Pie Monitor`;
+    const pageDescription = pie.description ? documentToPlainTextString(pie.description.json).slice(0, 160) : 'Find out how this mince pie scores on Mairead\'s Mince Pie Monitor.';
+    return {
+        title: pageTitle,
+        description: pageDescription,
+        openGraph: {
+            title: pageTitle,
+            url: `https://mincepie.red-route.org/pies/${pie.slug}/`,
+            type: 'article',
+            description: pageDescription,
+            images: pie.image ? [
+                {
+                    url: pie.image.url,
+                    width: pie.image.width,
+                    height: pie.image.height,
+                    alt: pie.title,
+                }
+            ] : undefined,
+        }
+    }
 }
 
 export default async function PostPage(

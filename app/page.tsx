@@ -6,7 +6,7 @@ import {Leaderboard} from "@/lib/components/leaderboard";
 function Intro() {
     return (
         <section className="flex-col md:flex-row flex items-center md:justify-between mt-8 mb-16 md:mb-12">
-            <h1 className="text-yellow-300 text-6xl md:text-8xl text-center font-bold tracking-tighter leading-tight md:pr-8">
+            <h1 className="text-yellow-300 mx-auto text-6xl md:text-8xl text-center font-bold tracking-tighter leading-tight md:pr-8">
                 Mairead's Mince Pie Monitor
             </h1>
         </section>

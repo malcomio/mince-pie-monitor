@@ -42,18 +42,19 @@ export default async function PostPage(
                     <div className="text-4xl mb-4">
                         <Score score={pie.rating}/>
                     </div>
+
+                    {
+                        pie.image && (
+                            <div className="mb-8 sm:mx-0 md:mb-16 mx-auto max-w-md">
+                                <img title={pie.title} src={pie.image.url} alt={pie.title}/>
+                            </div>
+                        )
+                    }
+
                     <div className="prose">
                         {documentToReactComponents(pie.description.json)}
                     </div>
                 </div>
-
-                {
-                    pie.image && (
-                        <div className="mb-8 sm:mx-0 md:mb-16 mx-auto max-w-md">
-                            <img title={pie.title} src={pie.image.url} alt={pie.title}/>
-                        </div>
-                    )
-                }
 
             </article>
 

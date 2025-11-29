@@ -32,11 +32,11 @@ export default async function PostPage(
 
             <Header />
             <article>
-                <h1 className="text-yellow-300 mx-auto mb-12 text-center text-6xl font-bold leading-tight tracking-tighter md:text-left md:text-7xl md:leading-none lg:text-8xl">
-                    {pie.title}
-                </h1>
+                <div className="bg-stone-50 p-3 mx-auto my-4 rounded-lg">
+                    <h1 className="mb-12 text-center text-6xl font-bold leading-tight tracking-tighter md:text-left md:text-7xl md:leading-none lg:text-8xl">
+                        {pie.title}
+                    </h1>
 
-                <div className="bg-stone-50 p-3 mx-auto my-4">
                     <div className="text-4xl mb-4">
                         <Score score={pie.rating}/>
                     </div>

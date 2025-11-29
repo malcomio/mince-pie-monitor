@@ -26,14 +26,14 @@ function Score({score}: any) {
 
 function Pie({pie}: any) {
     return (
-        <a href={'/pies/' + pie.slug} className='pie__wrapper text-4xl'>
-            <li className='pie'>
+        <a href={'/pies/' + pie.slug} className='pie__wrapper text-4xl mb-2'>
+            <div className='pie max-w-md mb-8'>
                 <p className='pie__name'>{pie.title} </p>
                 {pie.image && (
-                    <img className='pie__image max-w-md' src={pie.image.url} alt={'Photo of ' + pie.title}/>
+                    <img className='pie__image' src={pie.image.url} alt={'Photo of ' + pie.title}/>
                 )}
                 <Score score={pie.rating}/>
-            </li>
+            </div>
         </a>
     )
 }
@@ -41,26 +41,53 @@ function Pie({pie}: any) {
 function Podium({pies}: any) {
     return (
         <div className='winners box text-5xl'>
-            <h2 className='list-head'>
+            <h2 className='list-head mb-4'>
                 <span className='heading-before'>🏅</span>
                 The Best
                 <span className='heading-after'>🏆</span>
             </h2>
-            <ul className='podium'>
+            <div className='podium'>
                 {pies.map((pie: any) => {
                     return (
                         <Pie key={pie.slug} pie={pie}/>
                     );
                 })}
-            </ul>
+            </div>
         </div>
+    )
+}
+
+function Leaderboard({pies}: any) {
+    return (
+        <table>
+            <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Pie</th>
+                <th>Score</th>
+            </tr>
+            </thead>
+            <tbody>
+            {pies.map((pie: any, index: number) => (
+                <tr key={pie.slug}>
+                    <td>{index + 1}</td>
+                    <td>
+                        <a href={'/pies/' + pie.slug}>
+                            {pie.title}
+                        </a>
+                        </td>
+                    <td><Score score={pie.rating}/></td>
+                </tr>
+            ))}
+            </tbody>
+        </table>
     )
 }
 
 function WoodenSpoon({pies}: any) {
     return (
         <div className='loser box text-5xl'>
-            <h2 className='list-head'>
+            <h2 className='list-head mb-4'>
                 <span className='heading-before'>👎</span>
                 The Worst
                 <span className='heading-after'>👎</span>
@@ -84,6 +111,7 @@ export default async function Page() {
             <Intro/>
             <Podium pies={pies}/>
             <WoodenSpoon pies={pies}/>
+            <Leaderboard pies={pies}/>
         </div>
     );
 }

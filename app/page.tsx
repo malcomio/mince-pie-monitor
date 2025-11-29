@@ -45,7 +45,7 @@ function Podium({pies}: any) {
 
 function Leaderboard({pies}: any) {
     return (
-        <table class='table-auto  text-left'>
+        <table className='table-auto  text-left'>
             <thead className='bg-gray-200 border-gray-200'>
             <tr>
                 <th className='p-3'>Rank</th>

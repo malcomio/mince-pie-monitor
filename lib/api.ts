@@ -2,6 +2,10 @@ const POST_GRAPHQL_FIELDS = `
   slug
   title
   rating
+  description {
+    json
+  }
+  year
   image {
     url
   }
@@ -26,11 +30,11 @@ async function fetchGraphQL(query: string, preview = false): Promise<any> {
   ).then((response) => response.json());
 }
 
-function extractPost(fetchResponse: any): any {
+function extractPie(fetchResponse: any): any {
   return fetchResponse?.data?.mincePieCollection?.items?.[0];
 }
 
-function extractPostEntries(fetchResponse: any): any[] {
+function extractPies(fetchResponse: any): any[] {
   return fetchResponse?.data?.mincePieCollection?.items;
 }
 
@@ -45,7 +49,7 @@ export async function getPreviewPostBySlug(slug: string | null): Promise<any> {
     }`,
     true,
   );
-  return extractPost(entry);
+  return extractPie(entry);
 }
 
 export async function getAllPies(isDraftMode: boolean): Promise<any[]> {
@@ -62,10 +66,10 @@ export async function getAllPies(isDraftMode: boolean): Promise<any[]> {
     isDraftMode,
   );
   
-  return extractPostEntries(entries);
+  return extractPies(entries);
 }
 
-export async function getPostAndMorePosts(
+export async function getPie(
   slug: string,
   preview: boolean,
 ): Promise<any> {
@@ -81,20 +85,5 @@ export async function getPostAndMorePosts(
     }`,
     preview,
   );
-  const entries = await fetchGraphQL(
-    `query {
-      mincePieCollection(where: { slug_not_in: "${slug}" }, order: date_DESC, preview: ${
-        preview ? "true" : "false"
-      }, limit: 2) {
-        items {
-          ${POST_GRAPHQL_FIELDS}
-        }
-      }
-    }`,
-    preview,
-  );
-  return {
-    post: extractPost(entry),
-    morePosts: extractPostEntries(entries),
-  };
+  return extractPie(entry);
 }

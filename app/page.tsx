@@ -28,7 +28,7 @@ function Score({score}) {
 
 function Pie({pie}) {
     return (
-        <a href={pie.slug} className='pie__wrapper text-4xl'>
+        <a href={'/pies/' + pie.slug} className='pie__wrapper text-4xl'>
             <li className='pie'>
                 <p className='pie__name'>{pie.title} </p>
                 {pie.image && (

@@ -1,11 +1,12 @@
 import Link from "next/link";
 import { draftMode } from "next/headers";
 
-import { Markdown } from "@/lib/markdown";
-import { getAllPosts, getPostAndMorePosts } from "@/lib/api";
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+
+import { getAllPies, getPie } from "@/lib/api";
 
 export async function generateStaticParams() {
-  const allPosts = await getAllPosts(false);
+  const allPosts = await getAllPies(false);
 
   return allPosts.map((post) => ({
     slug: post.slug,
@@ -18,7 +19,7 @@ export default async function PostPage({
   params: { slug: string };
 }) {
   const { isEnabled } = draftMode();
-  const { post, morePosts } = await getPostAndMorePosts(params.slug, isEnabled);
+  const pie = await getPie(params.slug, isEnabled);
 
   return (
     <div className="container mx-auto px-5">
@@ -26,20 +27,23 @@ export default async function PostPage({
         <Link href="/" className="hover:underline">
           Mince Pie Monitor
         </Link>
-        .
       </h2>
       <article>
         <h1 className="mb-12 text-center text-6xl font-bold leading-tight tracking-tighter md:text-left md:text-7xl md:leading-none lg:text-8xl">
-          {post.title}
+          {pie.title}
         </h1>
-        <div className="mb-8 sm:mx-0 md:mb-16">
-          <image title={post.title} url={post.image.url} />
-        </div>
+          {
+              pie.image && (
+                  <div className="mb-8 sm:mx-0 md:mb-16">
+                      <img title={pie.title} src={pie.image.url} alt={pie.title} />
+                  </div>
+              )
+          }
 
-        <div className="mx-auto max-w-2xl">
-          <div className="prose">
-            <Markdown content={post.content} />
-          </div>
+          <div className="mx-auto max-w-2xl">
+              <div className="prose">
+                  {documentToReactComponents(pie.description.json)}
+              </div>
         </div>
       </article>
       <hr className="border-accent-2 mt-28 mb-24" />

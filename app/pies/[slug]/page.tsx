@@ -5,7 +5,8 @@ import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 import {getAllPies, getPie} from "@/lib/api";
 import {Score} from "@/lib/components/score";
 import {Leaderboard} from "@/lib/components/leaderboard";
-import {About} from "@/lib/components/about";
+import {Scoring} from "@/lib/components/about";
+import {Header} from "@/lib/components/header";
 
 export async function generateStaticParams() {
     const allPosts = await getAllPies();
@@ -28,11 +29,8 @@ export default async function PostPage(
 
     return (
         <div className="container mx-auto px-5">
-            <h2 className="text-yellow-300 mb-20 mt-8 text-2xl font-bold leading-tight tracking-tight md:text-4xl md:tracking-tighter">
-                <Link href="/" className="hover:underline">
-                    Mairead's Mince Pie Monitor
-                </Link>
-            </h2>
+
+            <Header />
             <article>
                 <h1 className="text-yellow-300 mb-12 text-center text-6xl font-bold leading-tight tracking-tighter md:text-left md:text-7xl md:leading-none lg:text-8xl">
                     {pie.title}
@@ -60,7 +58,7 @@ export default async function PostPage(
 
             <Leaderboard pies={pies}/>
             
-            <About />
+            <Scoring />
         </div>
     );
 }

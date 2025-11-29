@@ -1,6 +1,6 @@
 import {getAllPies} from "@/lib/api";
 import {Score} from "@/lib/components/score";
-import {About} from "@/lib/components/about";
+import {Scoring} from "@/lib/components/about";
 import {Leaderboard} from "@/lib/components/leaderboard";
 
 function Intro() {
@@ -50,7 +50,7 @@ export default async function Page() {
             <Intro/>
             <Podium pie={pies[0]}/>
             <Leaderboard pies={pies}/>
-            <About/>
+            <Scoring/>
         </div>
     );
 }

@@ -1,10 +1,10 @@
-function About() {
+function Scoring() {
   return (
     <div className='p-3 bg-stone-50 mb-8 mt-8'>
-      <h1 className='text-3xl'>About Us</h1>
-      <p>This is the about page of our application.</p>
+      <h1 className='text-3xl'>Scoring</h1>
+      <p>Mince pies are rated out of 5, based on taste, texture, and value</p>
     </div>
   );
 }
 
-export { About };
+export { Scoring };

@@ -29,7 +29,7 @@ function Pie({pie}: any) {
 
 function Podium({pie}: any) {
     return (
-        <div className='winners box text-5xl text-center bg-stone-50  bg-stone-50 mx-auto p-3 max-w-md'>
+        <div className='rounded-lg text-5xl text-center bg-stone-50  bg-stone-50 mx-auto p-3 max-w-md'>
             <h2 className='list-head mb-4'>
                 <span className='mr-2'>🏅</span>
                 The Best

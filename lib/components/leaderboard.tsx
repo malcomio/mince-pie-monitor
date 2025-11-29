@@ -2,7 +2,7 @@ import {Score} from "@/lib/components/score";
 
 function Leaderboard({pies}: any) {
     return (
-        <div className='p-3 bg-stone-50 mb-8 mt-8'>
+        <div className='p-3 bg-stone-50 mb-8 mt-8 rounded-lg'>
             <h2 className='list-head mb-4 text-3xl text-center'>
                 🥧 Mince Pie Leaderboard 🥧
             </h2>

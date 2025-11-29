@@ -32,7 +32,7 @@ export default async function PostPage(
 
             <Header />
             <article>
-                <h1 className="text-yellow-300 mb-12 text-center text-6xl font-bold leading-tight tracking-tighter md:text-left md:text-7xl md:leading-none lg:text-8xl">
+                <h1 className="text-yellow-300 mx-auto mb-12 text-center text-6xl font-bold leading-tight tracking-tighter md:text-left md:text-7xl md:leading-none lg:text-8xl">
                     {pie.title}
                 </h1>
 
@@ -49,16 +49,20 @@ export default async function PostPage(
                         )
                     }
 
-                    <div className="prose">
-                        {documentToReactComponents(pie.description.json)}
-                    </div>
+                    {
+                        pie.description && (
+                            <div className="prose">
+                                {documentToReactComponents(pie.description.json)}
+                            </div>
+                        )
+                    }
                 </div>
 
             </article>
 
             <Leaderboard pies={pies}/>
-            
-            <Scoring />
+
+            <Scoring/>
         </div>
     );
 }

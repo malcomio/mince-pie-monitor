@@ -5,6 +5,7 @@ import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 import {getAllPies, getPie} from "@/lib/api";
 import {Score} from "@/lib/components/score";
 import {Leaderboard} from "@/lib/components/leaderboard";
+import {About} from "@/lib/components/about";
 
 export async function generateStaticParams() {
     const allPosts = await getAllPies();
@@ -27,33 +28,38 @@ export default async function PostPage(
 
     return (
         <div className="container mx-auto px-5">
-            <h2 className="mb-20 mt-8 text-2xl font-bold leading-tight tracking-tight md:text-4xl md:tracking-tighter">
+            <h2 className="text-yellow-300 mb-20 mt-8 text-2xl font-bold leading-tight tracking-tight md:text-4xl md:tracking-tighter">
                 <Link href="/" className="hover:underline">
-                    Mince Pie Monitor
+                    Mairead's Mince Pie Monitor
                 </Link>
             </h2>
             <article>
-                <h1 className="mb-12 text-center text-6xl font-bold leading-tight tracking-tighter md:text-left md:text-7xl md:leading-none lg:text-8xl">
+                <h1 className="text-yellow-300 mb-12 text-center text-6xl font-bold leading-tight tracking-tighter md:text-left md:text-7xl md:leading-none lg:text-8xl">
                     {pie.title}
                 </h1>
 
-                <Score score={pie.rating}/>
+                <div className="bg-stone-50 p-3 mx-auto my-4">
+                    <div className="text-4xl mb-4">
+                        <Score score={pie.rating}/>
+                    </div>
+                    <div className="prose">
+                        {documentToReactComponents(pie.description.json)}
+                    </div>
+                </div>
+
                 {
                     pie.image && (
-                        <div className="mb-8 sm:mx-0 md:mb-16">
+                        <div className="mb-8 sm:mx-0 md:mb-16 mx-auto max-w-md">
                             <img title={pie.title} src={pie.image.url} alt={pie.title}/>
                         </div>
                     )
                 }
 
-                <div className="mx-auto max-w-2xl">
-                    <div className="prose">
-                        {documentToReactComponents(pie.description.json)}
-                    </div>
-                </div>
             </article>
-            
+
             <Leaderboard pies={pies}/>
+            
+            <About />
         </div>
     );
 }

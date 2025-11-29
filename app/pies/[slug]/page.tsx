@@ -3,6 +3,7 @@ import Link from "next/link";
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 
 import {getAllPies, getPie} from "@/lib/api";
+import {Score} from "@/lib/components/score";
 
 export async function generateStaticParams() {
     const allPosts = await getAllPies();
@@ -33,6 +34,8 @@ export default async function PostPage(
                 <h1 className="mb-12 text-center text-6xl font-bold leading-tight tracking-tighter md:text-left md:text-7xl md:leading-none lg:text-8xl">
                     {pie.title}
                 </h1>
+
+                <Score score={pie.rating}/>
                 {
                     pie.image && (
                         <div className="mb-8 sm:mx-0 md:mb-16">

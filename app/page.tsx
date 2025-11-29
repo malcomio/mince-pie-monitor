@@ -1,5 +1,5 @@
 import {getAllPies} from "@/lib/api";
-
+import {Score} from "@/lib/components/score";
 function Intro() {
     return (
         <section className="flex-col md:flex-row flex items-center md:justify-between mt-16 mb-16 md:mb-12">
@@ -8,20 +8,6 @@ function Intro() {
             </h1>
         </section>
     );
-}
-
-function Score({score}: any) {
-    const hasHalfPoint = score % 1 !== 0;
-    return (
-        <div className='pie__score'>
-            {
-                Array.from({length: score}, (_, i) => (
-                    <span key={i}>🎄</span>
-                ))
-            }
-            {hasHalfPoint && <span>🌲</span>}
-        </div>
-    )
 }
 
 function Pie({pie}: any) {
@@ -59,24 +45,24 @@ function Podium({pies}: any) {
 
 function Leaderboard({pies}: any) {
     return (
-        <table>
-            <thead>
+        <table class='table-auto  text-left'>
+            <thead className='bg-gray-200 border-gray-200'>
             <tr>
-                <th>Rank</th>
-                <th>Pie</th>
-                <th>Score</th>
+                <th className='p-3'>Rank</th>
+                <th className='p-3'>Pie</th>
+                <th className='p-3'>Score</th>
             </tr>
             </thead>
             <tbody>
             {pies.map((pie: any, index: number) => (
-                <tr key={pie.slug}>
-                    <td>{index + 1}</td>
-                    <td>
+                <tr key={pie.slug} className='odd:bg-white even:bg-gray-50'>
+                    <td className='p-3'>{index + 1}</td>
+                    <td className='p-3'>
                         <a href={'/pies/' + pie.slug}>
                             {pie.title}
                         </a>
-                        </td>
-                    <td><Score score={pie.rating}/></td>
+                    </td>
+                    <td className='p-3'><Score score={pie.rating}/></td>
                 </tr>
             ))}
             </tbody>

@@ -1,7 +1,5 @@
 import Link from "next/link";
-import Avatar from "./avatar";
 import DateComponent from "./date";
-import CoverImage from "./cover-image";
 
 function PostPreview({
   title,
@@ -32,7 +30,6 @@ function PostPreview({
         <DateComponent dateString={date} />
       </div>
       <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
-      {author && <Avatar name={author.name} picture={author.picture} />}
     </div>
   );
 }

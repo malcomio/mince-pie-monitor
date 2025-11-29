@@ -8,7 +8,7 @@ function Score({score}: any) {
                     <span key={i}>🎄</span>
                 ))
             }
-            {hasHalfPoint && <span>🌲</span>}
+            {hasHalfPoint && <span style={{fontSize: '60%'}}>🌲</span>}
         </div>
     )
 }

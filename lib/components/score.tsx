@@ -2,7 +2,7 @@
 function Score({score}: any) {
     const hasHalfPoint = score % 1 !== 0;
     return (
-        <div className='pie__score'>
+        <div className='pie__score text-nowrap'>
             {
                 Array.from({length: score}, (_, i) => (
                     <span key={i}>🎄</span>

@@ -38,14 +38,14 @@ function Intro() {
 
 function HeroPost({
   title,
-  coverImage,
+  image,
   date,
   excerpt,
   author,
   slug,
 }: {
   title: string;
-  coverImage: any;
+  image: any;
   date: string;
   excerpt: string;
   author: any;
@@ -54,7 +54,7 @@ function HeroPost({
   return (
     <section>
       <div className="mb-8 md:mb-16">
-        <CoverImage title={title} slug={slug} url={coverImage.url} />
+        
       </div>
       <div className="md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8 mb-20 md:mb-28">
         <div>
@@ -64,7 +64,7 @@ function HeroPost({
             </Link>
           </h3>
           <div className="mb-4 md:mb-0 text-lg">
-            <Date dateString={date} />
+            
           </div>
         </div>
         <div>
@@ -88,11 +88,8 @@ export default async function Page() {
       {heroPost && (
         <HeroPost
           title={heroPost.title}
-          coverImage={heroPost.coverImage}
           date={heroPost.date}
-          author={heroPost.author}
           slug={heroPost.slug}
-          excerpt={heroPost.excerpt}
         />
       )}
       <MoreStories morePosts={morePosts} />

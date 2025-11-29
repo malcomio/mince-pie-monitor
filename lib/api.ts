@@ -1,30 +1,8 @@
 const POST_GRAPHQL_FIELDS = `
   slug
   title
-  coverImage {
+  image {
     url
-  }
-  date
-  author {
-    name
-    picture {
-      url
-    }
-  }
-  excerpt
-  content {
-    json
-    links {
-      assets {
-        block {
-          sys {
-            id
-          }
-          url
-          description
-        }
-      }
-    }
   }
 `;
 
@@ -42,23 +20,24 @@ async function fetchGraphQL(query: string, preview = false): Promise<any> {
         }`,
       },
       body: JSON.stringify({ query }),
-      next: { tags: ["posts"] },
+      next: { tags: ["mincePie"] },
     },
   ).then((response) => response.json());
 }
 
 function extractPost(fetchResponse: any): any {
-  return fetchResponse?.data?.postCollection?.items?.[0];
+  return fetchResponse?.data?.mincePieCollection?.items?.[0];
 }
 
 function extractPostEntries(fetchResponse: any): any[] {
-  return fetchResponse?.data?.postCollection?.items;
+    console.log(fetchResponse);
+  return fetchResponse?.data?.mincePieCollection?.items;
 }
 
 export async function getPreviewPostBySlug(slug: string | null): Promise<any> {
   const entry = await fetchGraphQL(
     `query {
-      postCollection(where: { slug: "${slug}" }, preview: true, limit: 1) {
+      mincePieCollection(where: { slug: "${slug}" }, preview: true, limit: 1) {
         items {
           ${POST_GRAPHQL_FIELDS}
         }
@@ -72,7 +51,7 @@ export async function getPreviewPostBySlug(slug: string | null): Promise<any> {
 export async function getAllPosts(isDraftMode: boolean): Promise<any[]> {
   const entries = await fetchGraphQL(
     `query {
-      postCollection(where: { slug_exists: true }, order: date_DESC, preview: ${
+      mincePieCollection(where: { rating_exists: true }, order: rating_DESC, preview: ${
         isDraftMode ? "true" : "false"
       }) {
         items {
@@ -82,6 +61,8 @@ export async function getAllPosts(isDraftMode: boolean): Promise<any[]> {
     }`,
     isDraftMode,
   );
+  
+  console.log(entries);
   return extractPostEntries(entries);
 }
 
@@ -91,7 +72,7 @@ export async function getPostAndMorePosts(
 ): Promise<any> {
   const entry = await fetchGraphQL(
     `query {
-      postCollection(where: { slug: "${slug}" }, preview: ${
+      mincePieCollection(where: { slug: "${slug}" }, preview: ${
         preview ? "true" : "false"
       }, limit: 1) {
         items {
@@ -103,7 +84,7 @@ export async function getPostAndMorePosts(
   );
   const entries = await fetchGraphQL(
     `query {
-      postCollection(where: { slug_not_in: "${slug}" }, order: date_DESC, preview: ${
+      mincePieCollection(where: { slug_not_in: "${slug}" }, order: date_DESC, preview: ${
         preview ? "true" : "false"
       }, limit: 2) {
         items {

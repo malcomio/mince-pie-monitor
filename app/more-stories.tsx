@@ -21,7 +21,7 @@ function PostPreview({
   return (
     <div>
       <div className="mb-5">
-        <CoverImage title={title} slug={slug} url={coverImage.url} />
+        <image title={title} slug={slug} url={image.url} />
       </div>
       <h3 className="text-3xl mb-3 leading-snug">
         <Link href={`/posts/${slug}`} className="hover:underline">
@@ -48,7 +48,7 @@ export default function MoreStories({ morePosts }: { morePosts: any[] }) {
           <PostPreview
             key={post.slug}
             title={post.title}
-            coverImage={post.coverImage}
+            image={post.image}
             date={post.date}
             author={post.author}
             slug={post.slug}

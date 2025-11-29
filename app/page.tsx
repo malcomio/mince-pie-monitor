@@ -16,7 +16,7 @@ function Intro() {
 
 function Pie({pie}: any) {
     return (
-        <Link href={'/pies/' + pie.slug + '.html'} className='pie__wrapper text-4xl mb-2 flex-col max-w-md'>
+        <Link href={'/pies/' + pie.slug + '/'} className='pie__wrapper text-4xl mb-2 flex-col max-w-md'>
             <p className='mb-2'>{pie.title} </p>
             {pie.image && (
                 <img className='pie__image' src={pie.image.url} alt={'Photo of ' + pie.title}/>

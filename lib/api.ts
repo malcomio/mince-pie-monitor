@@ -1,6 +1,7 @@
 const POST_GRAPHQL_FIELDS = `
   slug
   title
+  rating
   image {
     url
   }
@@ -47,7 +48,7 @@ export async function getPreviewPostBySlug(slug: string | null): Promise<any> {
   return extractPost(entry);
 }
 
-export async function getAllPosts(isDraftMode: boolean): Promise<any[]> {
+export async function getAllPies(isDraftMode: boolean): Promise<any[]> {
   const entries = await fetchGraphQL(
     `query {
       mincePieCollection(where: { rating_exists: true }, order: rating_DESC, preview: ${

@@ -1,4 +1,5 @@
 import {Score} from "@/lib/components/score";
+import Link from "next/link";
 
 function Leaderboard({pies}: any) {
     return (
@@ -19,9 +20,9 @@ function Leaderboard({pies}: any) {
                     <tr key={pie.slug} className='odd:bg-white even:bg-gray-50'>
                         <td className='p-1'>{index + 1}</td>
                         <td className='p-1'>
-                            <a href={'/pies/' + pie.slug}>
+                            <Link href={'/pies/' + pie.slug + '.html'}>
                                 {pie.title}
-                            </a>
+                            </Link>
                         </td>
                         <td className='p-1'><Score score={pie.rating}/></td>
                     </tr>

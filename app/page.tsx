@@ -2,6 +2,7 @@ import {getAllPies} from "@/lib/api";
 import {Score} from "@/lib/components/score";
 import {Scoring} from "@/lib/components/about";
 import {Leaderboard} from "@/lib/components/leaderboard";
+import Link from "next/link";
 
 function Intro() {
     return (
@@ -15,7 +16,7 @@ function Intro() {
 
 function Pie({pie}: any) {
     return (
-        <a href={'/pies/' + pie.slug} className='pie__wrapper text-4xl mb-2 flex-col max-w-md'>
+        <Link href={'/pies/' + pie.slug + '.html'} className='pie__wrapper text-4xl mb-2 flex-col max-w-md'>
             <p className='mb-2'>{pie.title} </p>
             {pie.image && (
                 <img className='pie__image' src={pie.image.url} alt={'Photo of ' + pie.title}/>
@@ -23,7 +24,7 @@ function Pie({pie}: any) {
             <div className='mt-2'>
                 <Score score={pie.rating}/>
             </div>
-        </a>
+        </Link>
     )
 }
 

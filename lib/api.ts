@@ -30,7 +30,6 @@ function extractPost(fetchResponse: any): any {
 }
 
 function extractPostEntries(fetchResponse: any): any[] {
-    console.log(fetchResponse);
   return fetchResponse?.data?.mincePieCollection?.items;
 }
 
@@ -62,7 +61,6 @@ export async function getAllPosts(isDraftMode: boolean): Promise<any[]> {
     isDraftMode,
   );
   
-  console.log(entries);
   return extractPostEntries(entries);
 }
 

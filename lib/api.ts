@@ -52,38 +52,31 @@ export async function getPreviewPostBySlug(slug: string | null): Promise<any> {
   return extractPie(entry);
 }
 
-export async function getAllPies(isDraftMode: boolean): Promise<any[]> {
+export async function getAllPies(): Promise<any[]> {
   const entries = await fetchGraphQL(
     `query {
-      mincePieCollection(where: { rating_exists: true }, order: rating_DESC, preview: ${
-        isDraftMode ? "true" : "false"
-      }) {
+      mincePieCollection(where: { rating_exists: true }, order: rating_DESC) {
         items {
           ${POST_GRAPHQL_FIELDS}
         }
       }
-    }`,
-    isDraftMode,
+    }`
   );
   
   return extractPies(entries);
 }
 
 export async function getPie(
-  slug: string,
-  preview: boolean,
+  slug: string
 ): Promise<any> {
   const entry = await fetchGraphQL(
     `query {
-      mincePieCollection(where: { slug: "${slug}" }, preview: ${
-        preview ? "true" : "false"
-      }, limit: 1) {
+      mincePieCollection(where: { slug: "${slug}" }, limit: 1) {
         items {
           ${POST_GRAPHQL_FIELDS}
         }
       }
-    }`,
-    preview,
+    }`
   );
   return extractPie(entry);
 }

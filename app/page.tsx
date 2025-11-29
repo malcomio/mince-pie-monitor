@@ -1,5 +1,3 @@
-import {draftMode} from "next/headers";
-
 import {getAllPies} from "@/lib/api";
 
 function Intro() {
@@ -12,7 +10,7 @@ function Intro() {
     );
 }
 
-function Score({score}) {
+function Score({score}: any) {
     const hasHalfPoint = score % 1 !== 0;
     return (
         <div className='pie__score'>
@@ -26,7 +24,7 @@ function Score({score}) {
     )
 }
 
-function Pie({pie}) {
+function Pie({pie}: any) {
     return (
         <a href={'/pies/' + pie.slug} className='pie__wrapper text-4xl'>
             <li className='pie'>
@@ -40,7 +38,7 @@ function Pie({pie}) {
     )
 }
 
-function Podium({pies}) {
+function Podium({pies}: any) {
     return (
         <div className='winners box text-5xl'>
             <h2 className='list-head'>
@@ -49,7 +47,7 @@ function Podium({pies}) {
                 <span className='heading-after'>🏆</span>
             </h2>
             <ul className='podium'>
-                {pies.map((pie) => {
+                {pies.map((pie: any) => {
                     return (
                         <Pie key={pie.slug} pie={pie}/>
                     );
@@ -59,7 +57,7 @@ function Podium({pies}) {
     )
 }
 
-function WoodenSpoon({pies}) {
+function WoodenSpoon({pies}: any) {
     return (
         <div className='loser box text-5xl'>
             <h2 className='list-head'>
@@ -68,7 +66,7 @@ function WoodenSpoon({pies}) {
                 <span className='heading-after'>👎</span>
             </h2>
             <ul className='wooden-spoon'>
-                {pies.slice(pies.length - 1).map((pie) => {
+                {pies.slice(pies.length - 1).map((pie: any) => {
                     return (
                         <Pie key={pie.slug} pie={pie}/>
                     );
@@ -79,8 +77,7 @@ function WoodenSpoon({pies}) {
 }
 
 export default async function Page() {
-    const {isEnabled} = draftMode();
-    const pies = await getAllPies(isEnabled);
+    const pies = await getAllPies();
 
     return (
         <div className="container mx-auto px-5">

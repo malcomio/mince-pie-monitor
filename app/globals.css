@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  background: repeating-linear-gradient(transparent, transparent 8px, #dc0122 8px, #dc0122 12px, transparent 12px, transparent 16px, #dc0122 12px, #dc0122 32px, transparent 32px, transparent 36px, #dc0122 36px, #dc0122 40px, transparent 40px, transparent 64px), repeating-linear-gradient(90deg, transparent, transparent 8px, #dc0122 8px, #dc0122 12px, transparent 12px, transparent 16px, #dc0122 12px, #dc0122 32px, transparent 32px, transparent 36px, #dc0122 36px, #dc0122 40px, transparent 40px, transparent 64px), #ffffff;
+  background-blend-mode: multiply;
+  background-color: #ffffff;
+}

@@ -1,13 +1,13 @@
 import {getAllPies} from "@/lib/api";
 import {Score} from "@/lib/components/score";
-import {Scoring} from "@/lib/components/about";
+import {Footer} from "@/lib/components/about";
 import {Leaderboard} from "@/lib/components/leaderboard";
 import Link from "next/link";
 
 function Intro() {
     return (
-        <section className="flex-col md:flex-row flex items-center md:justify-between mt-8 mb-16 md:mb-12">
-            <h1 className="text-yellow-300 mx-auto text-6xl md:text-8xl text-center font-bold tracking-tighter leading-tight md:pr-8">
+        <section className="">
+            <h1 className="bg-stone-50 shadow-xl rounded-lg md:flex-row flex justify-center p-8 mt-8 mb-16 md:mb-12 text-center mx-auto text-6xl md:text-8xl text-center font-bold tracking-tighter leading-tight md:pr-8">
                 Mairead's Mince Pie Monitor
             </h1>
         </section>
@@ -30,7 +30,7 @@ function Pie({pie}: any) {
 
 function Podium({pie}: any) {
     return (
-        <div className='rounded-lg text-5xl text-center bg-stone-50  bg-stone-50 mx-auto p-3 max-w-md'>
+        <div className='rounded-lg text-5xl text-center bg-stone-50 shadow-xl  bg-stone-50 shadow-xl mx-auto p-3 max-w-md'>
             <h2 className='list-head mb-4'>
                 <span className='mr-2'>🏅</span>
                 The Best
@@ -51,7 +51,7 @@ export default async function Page() {
             <Intro/>
             <Podium pie={pies[0]}/>
             <Leaderboard pies={pies}/>
-            <Scoring/>
+            <Footer />
         </div>
     );
 }

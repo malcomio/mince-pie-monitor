@@ -6,7 +6,7 @@ import { documentToPlainTextString } from '@contentful/rich-text-plain-text-rend
 import {getAllPies, getPie} from "@/lib/api";
 import {Score} from "@/lib/components/score";
 import {Leaderboard} from "@/lib/components/leaderboard";
-import {Scoring} from "@/lib/components/about";
+import {Footer} from "@/lib/components/about";
 import {Header} from "@/lib/components/header";
 
 export async function generateStaticParams() {
@@ -23,8 +23,7 @@ type Props = {
 }
 
 export async function generateMetadata(
-    { params, searchParams }: Props,
-    parent: ResolvingMetadata
+    { params }: Props,
 ): Promise<Metadata> {
     const slug = (await params).slug
     const pie = await getPie(slug);
@@ -67,7 +66,7 @@ export default async function PostPage(
 
             <Header />
             <article>
-                <div className="bg-stone-50 p-3 mx-auto my-4 rounded-lg">
+                <div className="bg-stone-50 shadow-xl p-3 mx-auto my-4 rounded-lg">
                     <h1 className="mb-12 text-center text-6xl font-bold leading-tight tracking-tighter md:text-left md:text-7xl md:leading-none lg:text-8xl">
                         {pie.title}
                     </h1>
@@ -97,7 +96,7 @@ export default async function PostPage(
 
             <Leaderboard pies={pies}/>
 
-            <Scoring/>
+            <Footer/>
         </div>
     );
 }

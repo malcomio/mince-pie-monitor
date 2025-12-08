@@ -28,6 +28,7 @@ function Footer() {
     return (
         <footer className="bg-stone-50 shadow-xl mb-8 mt-8 rounded-lg">
             <About /> 
+            <Scoring />
         </footer>
     );
 }

@@ -5,6 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "next",
+    "deploy": "rm -rf .next && next build && scripts/deploy.sh",
     "build": "next build",
     "start": "next start",
     "setup": "node ./lib/setup.js"

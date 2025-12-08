@@ -19,7 +19,7 @@ function Scoring() {
   return (
     <div className='p-3'>
       <h2 className='text-3xl'>Scoring</h2>
-      <p>Mince pies are rated out of 5, based on taste, texture, and value</p>
+      <p>Mince pies are rated out of 5, based on pastry, mincemeat, and cost</p>
     </div>
   );
 }

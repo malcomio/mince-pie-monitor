@@ -8,7 +8,7 @@ function Intro() {
     return (
         <section className="">
             <h1 className="bg-stone-50 shadow-xl rounded-lg md:flex-row flex justify-center p-8 mt-8 mb-16 md:mb-12 text-center mx-auto text-6xl md:text-8xl text-center font-bold tracking-tighter leading-tight md:pr-8">
-                Mairead's Mince Pie Monitor
+                Máiréad's Mince Pie Monitor
             </h1>
         </section>
     );

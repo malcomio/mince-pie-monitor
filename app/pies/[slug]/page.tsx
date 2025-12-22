@@ -28,8 +28,8 @@ export async function generateMetadata(
     const slug = (await params).slug
     const pie = await getPie(slug);
     
-    const pageTitle = `${pie.title} | Mairead's Mince Pie Monitor`;
-    const pageDescription = pie.description ? documentToPlainTextString(pie.description.json).slice(0, 160) : 'Find out how this mince pie scores on Mairead\'s Mince Pie Monitor.';
+    const pageTitle = `${pie.title} | Máiréad's Mince Pie Monitor`;
+    const pageDescription = pie.description ? documentToPlainTextString(pie.description.json).slice(0, 160) : 'Find out how this mince pie scores on Máiréad\'s Mince Pie Monitor.';
     return {
         title: pageTitle,
         description: pageDescription,

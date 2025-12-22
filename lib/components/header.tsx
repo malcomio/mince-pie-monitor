@@ -5,7 +5,7 @@ function Header() {
     <header>
         <h2 className="bg-stone-50 rounded-lg p-8 shadow-xl my-8 text-2xl font-bold leading-tight tracking-tight md:text-4xl md:tracking-tighter">
             <Link href="/" className="hover:underline">
-                Mairead's Mince Pie Monitor
+                Máiréad's Mince Pie Monitor
             </Link>
         </h2>
     </header>

@@ -1,7 +1,7 @@
 {
   "name": "mince-pie-monitor",
   "version": "1.0.0",
-  "description": "Mairead's mince pie monitor - NextJS version",
+  "description": "Máiréad's mince pie monitor - NextJS version",
   "private": true,
   "scripts": {
     "dev": "next",

@@ -4,7 +4,7 @@ import {EXAMPLE_PATH, CMS_NAME} from "@/lib/constants";
 
 export const metadata = {
     title: `Mince Pie Monitor`,
-    description: `Mairead's mince pie monitor 2025`,
+    description: `Máiréad's mince pie monitor 2025`,
 };
 
 const inter = Inter({

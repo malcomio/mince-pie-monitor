@@ -11,6 +11,9 @@ function About() {
             <div className="p-3">
                 <p>Welcome to the Mince Pie Monitor. I started sharing my thoughts on mince pies, after having a disappointing and pricey mince pie at a well known chain of establishments in London and the South East. An incident I have regaled many times over the years. From that moment of culinary adversity, the mince pie monitor was born. The principles remain the same, judging is based on quality of pastry, mincemeat, and cost - you could have the best pastry and mincemeat but if I need to raid my savings to pay for my tasty treats then they will be marked down. I hope you enjoy our thoughts, please share yours.</p>
             </div>
+            <div className="p-3">
+
+            </div>
         </div>
     );
 }
@@ -24,11 +27,28 @@ function Scoring() {
   );
 }
 
+function Nerds() {
+    return (
+        <div className="p-3">
+            <h2 className="text-2xl">Nerd Business</h2>
+            <p>
+                If you want to know more about how this site is built, you can <a
+                    href="https://red-route.org/articles/mince-pie-monitor/"
+                    className="underline"
+                >
+                    read the blog post
+                </a>.
+            </p>
+        </div>
+    ); 
+}
+
 function Footer() {
     return (
         <footer className="bg-stone-50 shadow-xl mb-8 mt-8 rounded-lg">
             <About /> 
             <Scoring />
+            <Nerds />
         </footer>
     );
 }

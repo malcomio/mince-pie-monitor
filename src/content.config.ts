@@ -8,6 +8,7 @@ const pies = defineCollection({
 			title: z.string(),
 			score: z.number().optional(),
 			image: image().optional(),
+			shop: z.string().optional(),
 		}),
 });
 

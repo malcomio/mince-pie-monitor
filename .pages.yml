@@ -1,6 +1,5 @@
 media:
-  input: public
-  output: /
+  input: src/assets/pies
 content:
   - name: pies
     label: Pies

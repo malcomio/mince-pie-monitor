@@ -7,6 +7,10 @@ dist/
 # dependencies
 node_modules/
 
+# wrangler
+.wrangler/
+worker-configuration.d.ts
+
 # logs
 npm-debug.log*
 yarn-debug.log*

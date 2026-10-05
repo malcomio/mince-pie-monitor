@@ -1,0 +1,25 @@
+---
+import { getCollection, render } from 'astro:content';
+import { Picture } from 'astro:assets';
+import Score from '../../../components/Score.astro';
+import Layout from '../../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+	const pies = await getCollection('pies');
+	return pies.map((pie) => ({
+		params: { slug: pie.id },
+		props: { pie },
+	}));
+}
+
+const { pie } = Astro.props;
+const { Content } = await render(pie);
+---
+
+<Layout>
+	<h1>{pie.data.title}</h1>
+    
+	{pie.data.score !== undefined && <Score score={pie.data.score} />}
+	{pie.data.image && <Picture src={pie.data.image} alt={pie.data.title} />}
+	<Content />
+</Layout>

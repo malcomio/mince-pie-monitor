@@ -1,0 +1,17 @@
+---
+export interface Props {
+    score: number;
+}
+
+const { score } = Astro.props;
+const hasHalfPoint = score % 1 !== 0;
+---
+
+<div class='pie__score text-nowrap'>
+{
+    Array.from({length: score}, (_, i) => (
+        <span>🎄</span>
+    ))
+}
+{hasHalfPoint && <span style={{fontSize: '60%'}}>🌲</span>}
+</div>

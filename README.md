@@ -1,5 +1,7 @@
 # Máiréad's mince pie monitor 2026
 
+https://mince-pie-2026.red-route.org/
+
 Built with:
 
 * [Astro](https://astro.build/)

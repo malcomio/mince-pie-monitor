@@ -4,4 +4,4 @@ score: 3.5
 image: /src/assets/pies/IMG_0722.jpeg
 shop: Sainsbury's
 ---
-Very short and sweet pastry. High pastry to filling ratio, and fruit is unsubstantial.
+Very short and sweet pastry. High pastry to filling ratio, and fruit is disappointingly unsubstantial.

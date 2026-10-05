@@ -15,7 +15,9 @@
   },
   "dependencies": {
     "@astrojs/cloudflare": "^14.3.3",
+    "@tailwindcss/vite": "^4.3.3",
     "astro": "^7.3.5",
+    "tailwindcss": "^4.3.3",
     "wrangler": "^4.147.0"
   },
   "allowScripts": {

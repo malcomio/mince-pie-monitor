@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 import Leaderboard from '../components/Leaderboard.astro';
+import About from '../components/About.astro';
 
 const pies = await getCollection("pies");
 
@@ -11,4 +12,5 @@ const pies = await getCollection("pies");
 <Layout>
 	<Welcome />
 	<Leaderboard pies={pies} />
+	<About /> 
 </Layout>

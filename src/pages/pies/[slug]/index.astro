@@ -3,6 +3,7 @@ import { getCollection, render } from 'astro:content';
 import { Picture } from 'astro:assets';
 import Score from '../../../components/Score.astro';
 import Layout from '../../../layouts/Layout.astro';
+import Header from '../../../components/Header.astro';
 
 export async function getStaticPaths() {
 	const pies = await getCollection('pies');
@@ -17,9 +18,14 @@ const { Content } = await render(pie);
 ---
 
 <Layout>
+	<Header />
+	<div class="p-3 bg-stone-50 shadow-xl mb-8 mt-8 rounded-lg">
 	<h1>{pie.data.shop && `${pie.data.shop} `}{pie.data.title}</h1>
+	</div>
 	
-	{pie.data.score !== undefined && <Score score={pie.data.score} />}
-	{pie.data.image && <Picture src={pie.data.image} alt={pie.data.title} />}
-	<Content />
+	<div class="p-3 bg-stone-50 shadow-xl mb-8 mt-8 rounded-lg">
+		{pie.data.score !== undefined && <Score score={pie.data.score} />}
+		{pie.data.image && <Picture src={pie.data.image} alt={pie.data.title} />}
+		<Content />
+	</div>
 </Layout>

@@ -1,32 +1,15 @@
-# Astro Starter Kit: Basics
+# Máiréad's mince pie monitor 2026
 
-```sh
-npm create astro@latest -- --template basics
-```
+Built with:
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+* [Astro](https://astro.build/)
+* [Pages CMS](https://app.pagescms.org/malcomio/mince-pie-monitor/2026)
+* [Cloudflare Workers](https://www.cloudflare.com/products/workers/)
 
-## 🚀 Project Structure
+## Previous editions
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
-
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+* [2025 - Contentful and NextJS](https://github.com/malcomio/mince-pie-monitor/tree/2025)
+* [2020 - Google Sheets and React](https://github.com/malcomio/mince-pie-monitor/tree/react)
 
 ## 🧞 Commands
 
@@ -41,6 +24,3 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).

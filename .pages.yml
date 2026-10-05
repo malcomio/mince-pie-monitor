@@ -1,5 +1,5 @@
-media:
-  input: src/assets/pies
+media: src/assets/pies
+  
 content:
   - name: pies
     label: Pies

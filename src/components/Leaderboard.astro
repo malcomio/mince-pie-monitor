@@ -22,7 +22,7 @@ const pies = Astro.props.pies;
                 <td class='p-1'>{index + 1}</td>
                 <td class='p-1'>
                     <a href={'/pies/' + pie.id + '/'} class='hover:underline'>
-                        {pie.data.title}
+                        {pie.data.shop ? `${pie.data.shop} - ` : ''}{pie.data.title}
                     </a>
                 </td>
                 <td class='p-1'>

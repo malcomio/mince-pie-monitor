@@ -17,8 +17,8 @@ const { Content } = await render(pie);
 ---
 
 <Layout>
-	<h1>{pie.data.title}</h1>
-    
+	<h1>{pie.data.shop && `${pie.data.shop} `}{pie.data.title}</h1>
+	
 	{pie.data.score !== undefined && <Score score={pie.data.score} />}
 	{pie.data.image && <Picture src={pie.data.image} alt={pie.data.title} />}
 	<Content />

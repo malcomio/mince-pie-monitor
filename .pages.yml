@@ -12,18 +12,7 @@ content:
       - { name: score, label: Score, type: number }
       - { name: image, label: Image, type: image }
       - { name: body, label: Body, type: rich-text }
-      - name: shop
-        type: reference
-        options:
-          collection: shops
-  - name: shops
-    label: Shops
-    type: collection
-    path: src/content/shops
-    view:
-      fields: [ title ]
-    fields:
-      - { name: title, label: Title, type: string, required: true }
+      - { name: shop, label: Shop, type: string }
   - name: about
     label: About page
     type: file

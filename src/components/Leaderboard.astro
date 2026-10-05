@@ -2,7 +2,7 @@
 import Score from './Score.astro';
 
 const pies = Astro.props.pies;
-console.log(pies)
+
 ---
 <div class='p-3 bg-stone-50 shadow-xl mb-8 mt-8 rounded-lg'>
     <h2 class='list-head mb-4 text-3xl text-center'>
@@ -21,7 +21,7 @@ console.log(pies)
             <tr class='odd:bg-white even:bg-gray-50'>
                 <td class='p-1'>{index + 1}</td>
                 <td class='p-1'>
-                    <a href={'/pies/' + pie.slug + '/'} class='hover:underline'>
+                    <a href={'/pies/' + pie.id + '/'} class='hover:underline'>
                         {pie.data.title}
                     </a>
                 </td>

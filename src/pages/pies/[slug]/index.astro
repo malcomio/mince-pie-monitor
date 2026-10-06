@@ -20,12 +20,18 @@ const { Content } = await render(pie);
 <Layout>
 	<Header />
 	<div class="p-3 bg-stone-50 shadow-xl mb-8 mt-8 rounded-lg">
-	<h1>{pie.data.shop && `${pie.data.shop} `}{pie.data.title}</h1>
+		<h2 class="text-3xl font-bold text-center">{pie.data.shop && `${pie.data.shop} `}{pie.data.title}</h2>
 	</div>
 	
-	<div class="p-3 bg-stone-50 shadow-xl mb-8 mt-8 rounded-lg">
-		{pie.data.score !== undefined && <Score score={pie.data.score} />}
+	<div class="p-3 bg-stone-50 shadow-xl mb-8 mt-8 rounded-lg flex">
+
 		{pie.data.image && <Picture src={pie.data.image} alt={pie.data.title} />}
-		<Content />
+
+		<div class="p-3">
+			<div class="pb-3">
+				{pie.data.score !== undefined && <Score score={pie.data.score} />}
+			</div>
+			<Content />
+		</div>
 	</div>
 </Layout>

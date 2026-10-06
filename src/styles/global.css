@@ -9,9 +9,9 @@ body {
 }
 
 body {
-  background: repeating-linear-gradient(transparent, transparent 8px, #dc0122 8px, #dc0122 12px, transparent 12px, transparent 16px, #dc0122 12px, #dc0122 32px, transparent 32px, transparent 36px, #dc0122 36px, #dc0122 40px, transparent 40px, transparent 64px), repeating-linear-gradient(90deg, transparent, transparent 8px, #dc0122 8px, #dc0122 12px, transparent 12px, transparent 16px, #dc0122 12px, #dc0122 32px, transparent 32px, transparent 36px, #dc0122 36px, #dc0122 40px, transparent 40px, transparent 64px), #ffffff;
-  background-blend-mode: multiply;
-  background-color: #ffffff;
+  background-color: #5a0f24;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Cg fill='%23d4af37'%3E%3Cpolygon id='s' points='12,7 13.18,10.38 16.76,10.45 13.9,12.62 14.94,16.05 12,14 9.06,16.05 10.1,12.62 7.24,10.45 10.82,10.38'/%3E%3Cpolygon points='12,7 13.18,10.38 16.76,10.45 13.9,12.62 14.94,16.05 12,14 9.06,16.05 10.1,12.62 7.24,10.45 10.82,10.38' transform='translate(24 24)'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: repeat;
   padding: 2rem;
 }
 

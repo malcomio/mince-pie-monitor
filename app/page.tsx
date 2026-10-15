@@ -7,9 +7,10 @@ import Link from "next/link";
 function Intro() {
     return (
         <section className="">
-            <h1 className="bg-stone-50 shadow-xl rounded-lg md:flex-row flex justify-center p-8 mt-8 mb-16 md:mb-12 text-center mx-auto text-6xl md:text-8xl text-center font-bold tracking-tighter leading-tight md:pr-8">
-                Máiréad's Mince Pie Monitor
+            <h1 className="bg-stone-50 shadow-xl rounded-lg md:flex-row flex justify-center p-8 mt-8 mb-8 md:mb-6 text-center mx-auto text-6xl md:text-8xl text-center font-bold tracking-tighter leading-tight md:pr-8">
+                Máiréad's Mince Pie Monitor 2025
             </h1>
+            <p className="bg-stone-50 shadow-xl rounded-lg md:flex-row flex justify-center p-4 mt-4 mb-8 md:mb-12 text-center mx-auto text-center tracking-tighter leading-tight md:pr-8"><a href="https://mincepie.red-route.org">View the latest Mince Pie Monitor</a></p>
         </section>
     );
 }

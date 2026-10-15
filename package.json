@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "next",
-    "deploy": "rm -rf .next && next build && scripts/deploy.sh",
+    "deploy": "wrangler deploy",
     "build": "next build",
     "start": "next start",
     "setup": "node ./lib/setup.js"
@@ -32,5 +32,8 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/malcomio/mince-pie-monitor.git"
+  },
+  "devDependencies": {
+    "wrangler": "^4.151.0"
   }
 }

@@ -5,4 +5,4 @@ score: 4.5
 image: /src/assets/pies/image.jpg
 shop: M&S
 ---
-Insides are delicious fruity fruit spiced and delicious. Pastry very buttery and crumbly.
+Rich, fruity, and nicely spiced mincemeat. Buttery and crumbly pastry. Delicious. 

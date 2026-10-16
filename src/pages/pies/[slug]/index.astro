@@ -23,12 +23,12 @@ const { Content } = await render(pie);
 		<h2 class="text-3xl font-bold text-center">{pie.data.shop && `${pie.data.shop} `}{pie.data.title}</h2>
 	</div>
 	
-	<div class="p-3 bg-stone-50 shadow-xl mb-8 mt-8 rounded-lg flex">
+	<div class="p-3 bg-stone-50 shadow-xl mb-8 mt-8 rounded-lg grid sm:grid-cols-2">
 
 		{pie.data.image && <Picture src={pie.data.image} alt={pie.data.title} />}
 
 		<div class="p-3">
-			<div class="pb-3">
+			<div class="pb-3 text-4xl">
 				{pie.data.score !== undefined && <Score score={pie.data.score} />}
 			</div>
 			<Content />

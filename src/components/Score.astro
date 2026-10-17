@@ -1,17 +1,28 @@
 ---
 export interface Props {
-    score: number;
+    score?: number;
+    position?: number;
 }
 
-const { score } = Astro.props;
-const hasHalfPoint = score % 1 !== 0;
+const { score, position } = Astro.props;
+const hasHalfPoint = score !== undefined && score % 1 !== 0;
+
+const medals = {
+    1: '🥇',
+    2: '🥈',
+    3: '🥉'
+};
+const medal = position !== undefined && medals[position];
 ---
 
-<div class='pie__score text-nowrap'>
-{
-    Array.from({length: score}, (_, i) => (
-        <span>🎄</span>
-    ))
-}
-{hasHalfPoint && <span style={{fontSize: '60%'}}>🌲</span>}
+<div class='pie__score text-nowrap flex'>
+    <div>
+        {
+            score !== undefined && Array.from({length: score}, (_, i) => (
+                <span>🎄</span>
+            ))
+        }
+        {hasHalfPoint && <span style={{fontSize: '60%'}}>🌲</span>}
+    </div>
+    {medal && <div class='ml-4'>{medal}</div>}
 </div>

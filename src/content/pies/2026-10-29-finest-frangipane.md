@@ -1,6 +1,6 @@
 ---
 title: "Finest Frangipane Mince Pie "
-score: 0.5
+score: 1
 image: /src/assets/pies/IMG_0813.jpeg
 shop: Tesco
 ---

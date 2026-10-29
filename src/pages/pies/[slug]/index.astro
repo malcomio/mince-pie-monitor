@@ -7,6 +7,10 @@ import Header from '../../../components/Header.astro';
 
 export async function getStaticPaths() {
 	const pies = await getCollection('pies');
+
+	// Sort the pies by score.
+	pies.sort((a: { data: { score: any; }; }, b: { data: { score: any; }; }) => (b.data.score ?? 0) - (a.data.score ?? 0));
+
 	return pies.map((pie, index) => ({
 		params: { slug: pie.id },
 		props: { pie, position: index + 1 },
